@@ -1,4 +1,5 @@
-
+#script takes restaurant menus computes cosine similarity and then from user specified 
+#restaurant returns "n" restaurants with the highest similarity
 import os
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1' #using cpu not gpu
@@ -137,7 +138,6 @@ if __name__ == '__main__':
     s = pd.DataFrame(s, index = restaurantMenus['url'], columns = restaurantMenus['url'])
     
     name = 'Highlands' #example
-    nameURL = allMenus['url'][ allMenus['restaurant'] == name ].values[0]
     
     print(getMostSimilar(name, s, restaurantMenus, n = 10, t = True))
     
